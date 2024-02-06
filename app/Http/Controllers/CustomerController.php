@@ -48,7 +48,7 @@ class CustomerController extends Controller
         ];
         Customer::create($record);
 
-        return redirect('/view_list')->with('success_message', 'New Record Added!');
+        return redirect('/view_list/'.$request->input('municipality'))->with('success_message', 'New Record Added!');
     }
 
     public function update_record(Request $request)
