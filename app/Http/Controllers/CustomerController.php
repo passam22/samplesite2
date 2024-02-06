@@ -65,7 +65,7 @@ class CustomerController extends Controller
         ];
         Customer::where('id',$request->input('customer_id'))->update($record);
 
-        return redirect('/view_list')->with('success_message', 'Record Successfully Updated!');
+        return redirect('/view_list/'.$request->input('municipality'))->with('success_message', 'Record Successfully Updated!');
     }
 
     public function delete_record($id)
